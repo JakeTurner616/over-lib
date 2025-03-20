@@ -1,7 +1,13 @@
 {
   "name": "over-lib",
   "version": "0.1.0",
-  "private": true,
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "private": false,
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/react": "^16.2.0",
