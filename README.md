@@ -2,7 +2,7 @@
 
 over-lib is a very simple quadrilateral position overlay library for ReactJS/TS. It provides a customizable overlay with L-shaped corner markers to help correctly align items (e.g., credit cards, documents) within a camera view. It supports simple one-point perspective shift:
 
-![over-lib overlay](docs\scan-overlay.gif)
+![over-lib overlay](./docs/scan-overlay.gif)
 
 ## Features
 
