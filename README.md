@@ -1,46 +1,85 @@
-# Getting Started with Create React App
+# over-lib
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+over-lib is a very simple quadrilateral position overlay library for ReactJS/TS. It provides a customizable overlay with L-shaped corner markers to help correctly align items (e.g., credit cards, documents) within a camera view. It supports simple one-point perspective shift:
 
-## Available Scripts
+![over-lib overlay](docs\scan-overlay.gif)
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Customizable Dimensions:** Easily set width, height, marker thickness, and marker length.
+- **Color Customization:** Adjust marker colors to match your application's theme.
+- **Perspective Effect:** Optionally simulate a one-point perspective with configurable distance and rotation (both vertical and horizontal).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Installation
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Via npm (from GitHub)
 
-### `npm test`
+Install the library directly from GitHub:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+npm install git+https://github.com/JakeTurner616/over-lib.git
+```
 
-### `npm run build`
+## Usage
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+After installing, import the component in your React project as follows:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```jsx
+import React from 'react';
+import { OverlayMarker } from 'over-lib';
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+const App = () => (
+  <div style={{ position: 'relative', width: '100vw', height: '100vh' }}>
+    <OverlayMarker
+      width="200px"
+      height="200px"
+      markerColor="red"
+      markerThickness={2}
+      markerLength="20px"
+      perspective={true}            // Adjust this to toggle the following props:
+      perspectiveDistance="400px"  // Change the perspective depth
+      rotateX="20deg"             // Change the vertical rotation
+      rotateY="10deg"             // Change the horizontal rotation
+    />
+  </div>
+);
 
-### `npm run eject`
+export default App;
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Development
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+To clone and run the project locally:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1. **Clone the Repository:**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+   ```bash
+   git clone https://github.com/JakeTurner616/over-lib
+   cd over-lib
+   ```
 
-## Learn More
+2. **Install Dependencies:**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   ```bash
+   npm install
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3. **Run the Demo Storybook:**
+
+   ```bash
+   npm run storybook
+   ```
+
+   This will launch the demo frontend storybook to easily interact with the component and its props.
+
+## Building the Library (Rollup)
+
+To build the component:
+
+```bash
+npm run build
+```
+
+## LICENSE
+
+This project is licensed under the [MIT](./LICENSE) license.
